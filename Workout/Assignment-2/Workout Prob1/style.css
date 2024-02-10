@@ -1,0 +1,65 @@
+h1
+{
+    color: white;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+img
+{
+    height: 395px;
+    width: 339px;
+}
+
+#bar
+{
+    background-color: grey;
+    display: flex;
+    height: 60px;
+}
+
+input
+{
+    margin-left: 20%;
+    width: 800px;
+    height: 30px;
+    border: gray thin 10px;
+}
+
+ul
+{
+    text-decoration: none;
+    margin-left: 800px;
+    margin-top: 20px;
+}
+
+li
+{
+    display: inline;
+    text-align:right;
+    padding-top: 100%;
+}
+
+.container
+{
+    margin-top: 10px;
+    margin-left: 70px;
+    background-color: white;
+    display: flex;
+    text-align: center;
+}
+
+#fir,#sec,#third
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    border: solid 5px;
+    text-align: justify;
+    height: 495px;
+    width: 339px;
+}
+
+#fir:hover,#sec:hover,#third:hover
+{
+    transform: scale(1.05);
+}
