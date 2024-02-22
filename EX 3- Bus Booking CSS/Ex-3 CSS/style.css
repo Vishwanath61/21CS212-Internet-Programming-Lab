@@ -1,0 +1,78 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.pexels.com/photos/1360254/pexels-photo-1360254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.insidedesc
+{
+    width: 200px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px;
+}
+
+#buyticket
+{
+    position: relative;
+    margin-top: 100px;
+}
+
+.header
+{
+    background-color: #83af9b;
+    height: 50px;
+    width: 100%;
+}
+
+.content
+{
+    display: flex;
+    background-color: red;
+    color: white;
+}
+
+#buyticket {
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    width: 100px;
+    background-color: #6552fe; /* Use a valid color value */
+}
+
+
+#title
+{
+    font-family: 'Jost';
+    font-weight: normal;
+    color: white;
+    top: 5px;
+    text-align: center;
+    position: relative;
+}
+
+#login
+{
+    color: #fe4365;
+    position: absolute;
+    top: 20px;
+    left: 80%;    
+}
+
+#login:hover
+{
+    color: black;
+    cursor: pointer;
+}
