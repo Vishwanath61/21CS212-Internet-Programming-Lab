@@ -1,0 +1,24 @@
+<!-- 5.Write a JavaScript program to test if the first character of a string is uppercase or not -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>character Check</title>
+</head>
+<body>
+    <script>
+        const str=prompt("Enter the String: ");
+        const char=str.charAt(0);
+        if(/^[A-Z]/.test(char))
+        {
+            alert("The first letter of given string \""+str+"\" is in Uppercase");
+        }
+        else
+        {
+            alert("The first letter of given string \""+str+"\" is not in Uppercase");
+        }
+    </script>    
+</body>
+</html>

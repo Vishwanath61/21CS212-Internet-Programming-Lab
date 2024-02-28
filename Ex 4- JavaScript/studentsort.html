@@ -1,0 +1,56 @@
+<!-- 1.Write a program to display student objects sorted by their total scores. [use Objects] -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student mark sort</title>
+</head>
+<body>
+    <div id="content" style="background-color: blue;color: red;font-size: large;height: 300px;width: 200px;">
+        <button id="get" value="get">get sort</button>
+        <p id="para"></p>
+    </div>
+    <script>
+        const students = 
+        [
+            { name: "Vishwa", math: 85, science: 90, english: 88, total:undefined},
+            { name: "Bruce", math: 78, science: 85, english: 90, total:undefined},
+            { name: "Jon Snow", math: 92, science: 88, english: 95, total:undefined},
+            { name: "Jesse", math: 80, science: 85, english: 75, total:undefined},
+            { name: "Walter White", math: 95, science: 92, english: 88, total:undefined}
+        ];
+        let arr=[];
+        for(var i=0;i<students.length;i++)
+        {
+            arr[i]=i;
+        }
+        for(var i=0;i<students.length;i++)
+        {
+            students[i].total=students[i].math+students[i].science+students[i].english;
+        }
+        for(var i=0;i<students.length;i++)
+        {
+            let max=students[i].total;
+            for(var j=i+1;j<students.length;j++)
+            {
+                if(students[i].total<students[j].total)
+                {
+                    max=students[j].total;
+                }
+                if(max!=students[i].total)
+                {
+                    let temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        for(var i=0;i<students.length;i++)
+        {
+            document.write(`Name- ${students[arr[i]].name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total: ${students[arr[i]].total}<br>`);
+        }
+    </script>
+</body>
+</html>
