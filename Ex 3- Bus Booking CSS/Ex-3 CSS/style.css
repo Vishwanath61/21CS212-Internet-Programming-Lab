@@ -1,78 +1,92 @@
+:root{
+    --bg: #FDF5F6;
+    --primary: #D73146;
+    --secondary: #A3EA92;
+    --accent: #60E094;
+    --text: #1C0508;
+}
+
 *
 {
     margin: 0;
     padding: 0;
+    font-family: 'Jost';
 }
-
-body
-{
-    width: 100%;
-    height: 100%;
-    background-image: url("https://images.pexels.com/photos/1360254/pexels-photo-1360254.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.insidedesc
-{
-    width: 200px;
-    color: white;
-    text-align: center;
-    width: 100%;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5); 
-    border-radius: 5px;
-}
-
-#buyticket
-{
-    position: relative;
-    margin-top: 100px;
-}
-
-.header
-{
-    background-color: #83af9b;
-    height: 50px;
-    width: 100%;
-}
-
-.content
-{
-    display: flex;
-    background-color: red;
-    color: white;
-}
-
-#buyticket {
-    border: none;
-    border-radius: 5px;
-    height: 20px;
-    width: 100px;
-    background-color: #6552fe; /* Use a valid color value */
-}
-
 
 #title
 {
-    font-family: 'Jost';
-    font-weight: normal;
-    color: white;
-    top: 5px;
+    color: var(--primary);
     text-align: center;
-    position: relative;
 }
 
 #login
 {
-    color: #fe4365;
+    background-color: var(--accent);
+    padding: 12px 22px;
+    color: var(--text);
+    text-decoration: none;
     position: absolute;
-    top: 20px;
-    left: 80%;    
+    top: 4px;
+    left: 87%;
+    border-radius: 2px;
+    transition: all 1s;
 }
 
 #login:hover
 {
-    color: black;
+    border-radius: 12px;
     cursor: pointer;
+    box-shadow: 6px 8px 3rem var(--accent);
+}
+
+.container{
+    margin: 12px;
+    display: flex;
+    gap: 1rem;
+}
+
+.sleeper, .seater, .semisleeper{
+    padding: 8px;
+    border-radius: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid var(--secondary);
+    gap: 18px;
+    padding: 24px;
+}
+
+.about{
+    margin: 24px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.about-img{
+    width: 90px;
+    border-radius: 24px;
+}
+
+.btn{
+    background-color: var(--accent);
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 6px 8px 3rem var(--accent);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 4rem 25%;
+    visibility: hidden;
+}
+
+label{
+    margin-top: 12px;
 }
