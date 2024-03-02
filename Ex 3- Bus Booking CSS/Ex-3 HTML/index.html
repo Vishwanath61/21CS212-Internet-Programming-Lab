@@ -4,45 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOK MY BUS</title>
-    <link rel="stylesheet" href="../Ex-3 CSS/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="header">
         <h1 id="title">BOOK MY BUS</h1>
         <a href="login.html" id="login">Login/Sign-Up</a>
-    </div>    
-    <div class="insidedesc">
-        <p style="text-decoration: underline;"><b>Book Your ride</b></p><br>
-        <p>Book Bus Tickets on BookMyBus simple & superfast booking process with no service fee + no payment gateway charge.</p>
-        <button id="buyticket" style="border: none;border-radius: 5px;height: 20px;width: 100px;background-color: 6552fe;">Book Tickets</button>
     </div>
-    <div class=""content>
-        <p>The Tamil Nadu State Transportation Corporation (TNSTC) has over 41,000 buses in its fleet, covering more than 5,100 travel routes daily. The shortest travel route is between Madurai and Tiruchirapalli, and the longest is between Bangalore and Tiruchirapalli. Here is a list of some popular travel routes you can make TNSTC online booking. <br>
 
-            Tiruchirapalli to Chennai <br>
-            Velankanni to Chennai <br>
-            Chennai to Kumbakonam <br>
-            Chennai to Tirunelveli <br>
-            Mattuthavani to Koyambedu <br>
-            Madurai to Chennai <br>
-            Koyambedu to Shanthinagar <br>
-            Chennai to Bangalore <br>
-            Chennai to Kumbakonam <br>
-            Chennai to Kanyakumari <br><br>
-                    
-            
-            Types of TNSTC Buses <br>
-            The Tamil Nadu State Transport Corporation has a wide range of buses to offer to its passengers. The availability of these buses is contingent on factors such as travel routes, timings, budget, and accommodation type. You can make TNSTC online booking and find out the availability of the buses for your route. Some of the popular bus types that TNSTC has included are:<br>
-            
-            Ultra Deluxe<br>
-            A/C Sleeper (2+1)<br>
-            A/C Seater (2+1)<br>
-            A/C Seater (2+2)<br>
-            Classic<br>
-            Non-A/C Sleeper (2+1)<br>
-            Deluxe<br>
-        </p>
+    <div class="about">
+        <ul style="list-style: none;">
+            <li>
+              The Book My Bus has over
+              41,000 buses in its fleet, covering more than 5,100 travel routes
+              daily.
+            </li>
+            <li>
+              The shortest travel route is between Madurai and Tiruchirapalli, and
+              the longest is between Bangalore and Tiruchirapalli.
+            </li>
+            <li>
+              Here is a list of some popular travel routes you can make TNSTC
+              online booking.
+            </li>
+          </ul>
     </div>
+
+    <div class="container">
+        <div class="seater">
+            <img src="./assets/support.png" class="about-img">
+            <p>Have a question or need assistance? Our dedicated customer support team is available round-the-clock to assist you with any queries or concerns you may have before, during, or after your journey.</p>
+            <button class="btn">Contact</button>
+        </div>
+        <div class="sleeper">
+            <img src="./assets/ticket.png" class="about-img">
+            <p>Effortlessly secure your tickets anytime, anywhere. Simplify your journey with quick, hassle-free booking. Experience convenience with us.</p>
+            <button class="btn" onclick="bookShow()">Book Tickets</button>
+        </div>
+        <div class="semisleeper">
+            <img src="./assets/location.png" class="about-img">
+            <p>Stay updated on bus location in real-time from any device</p>
+            <button class="btn">Bus Tracking</button>
+        </div>
+    </div>
+
+    <div class="form">
+        <label for="from">From:</label>
+        <select>
+            <option value="MAD">Madurai</option>
+            <option value="CHE">Chennai</option>
+            <option value="COVAI">Coimbatore</option>
+            <option value="KOVIL">NagarKovil</option>
+            <option value="Thir">Tiruchirapalli</option>
+            <option value="Thir">Salem</option>
+            <option value="Thir">Vellore</option>
+            <option value="Thir">Erode</option>
+            <option value="Thir">Karur</option>
+        </select>
+        <label for="to">To:</label>
+        <select id="to">
+            <option value="CHE">Chennai</option>
+            <option value="MAD">Madurai</option>
+            <option value="COVAI">Coimbatore</option>
+            <option value="KOVIL">NagarKovil</option>
+            <option value="Thir">Tiruchirapalli</option>
+            <option value="Thir">Salem</option>
+            <option value="Thir">Vellore</option>
+            <option value="Thir">Erode</option>
+            <option value="Thir">Karur</option>
+        </select>
+        <label for="date">Date:</label>
+        <input type="date" id="date"/>
+        <label for="bus">Bus Type:</label>
+        <select id="busType" >
+            <option value="ordinary">Ordinary Bus</option>
+            <option value="semi-luxury">Semi-Luxury Bus</option>
+            <option value="luxury">Luxury Bus</option>
+            <option value="volvo">Volvo Bus</option>
+            <option value="sleeper">Sleeper Bus</option>
+            <option value="ac">AC Bus</option>
+        </select>
+        <label id="no">No of Passengers: </label>
+        <sub>1</sub> <input type="range" min="1" max="10" id="no"/><sub>10</sub>
+        <button class="btn">Book Tickets</button>
+    </div>
+
+
+    <script>
+        let bookform = document.getElementsByClassName("form")[0];
+        const bookShow = () => {
+          bookform.style.visibility = "visible";
+        };
+      </script>
 </body>
 </html>
