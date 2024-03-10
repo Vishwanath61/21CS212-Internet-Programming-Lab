@@ -1,0 +1,25 @@
+.container
+{
+    background-color: gainsboro;
+    padding: 10px;
+    width: 50%;
+    position: relative;
+}
+
+#submit
+{
+    margin-left: 30%;
+}
+
+#address
+{
+    width: 200px;
+    height: 50px;
+}
+
+p
+{
+    height: 5px;
+    color: red;
+    margin-top: 5px;
+}

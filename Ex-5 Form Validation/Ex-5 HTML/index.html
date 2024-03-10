@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ex-5 CSS/style.css">
+    <title>Form Validation</title>
+    <script src="../Ex-5 JS/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div class="inputs">
+                <label for="name">Enter Your Name:</label>
+                <input type="text" name="name" id="name">
+                <div class="error">
+                    <p id="pname"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="email">Enter Your Email:</label>
+                <input type="email" name="email" id="email">
+                <div class="error">
+                    <p id="pmail"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="gender">Choose Your Gender:</label>
+                <input type="radio" name="gender" id="gender" value="MALE">MALE
+                <input type="radio" name="gender" id="gender" value="MALE">FEMALE
+                <div class="error">
+                    <p id="pgend"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="cpass">Create Your Password:</label>
+                <input type="password" name="cpass" id="cpass">
+                <div class="error">
+                    <p id="pcpass"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="pass">Confirm Your Password:</label>
+                <input type="password" name="pass" id="pass">
+                <div class="error">
+                    <p id="ppass"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="number">Mobile No:</label>
+                <input type="number" name="number" id="number">
+                <div class="error">
+                    <p id="pnum"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="dob">Choose your DOB:</label>
+                <input type="date" name="dob" id="dob">
+                <div class="error">
+                    <p id="pdob"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="address">Enter Your address:</label>
+                <input type="text" name="address" id="address">
+                <div class="error">
+                    <p id="paddr"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <label for="loc">Choose Your Location:</label>
+                <select name="loc" id="loc">
+                    <option value="choose">Choose the Location</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Madurai">Madurai</option>
+                </select>
+                <div class="error">
+                    <p id="ploc"></p>
+                </div>
+            </div>
+            <div class="inputs">
+                <input type="button" name="submit" id="submit" value="Submit" onclick="fun()">
+                <input type="reset" name="reset" id="reset" value="Reset">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
