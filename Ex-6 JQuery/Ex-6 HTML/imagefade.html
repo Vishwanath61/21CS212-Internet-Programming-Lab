@@ -1,0 +1,30 @@
+<!-- 1. Create a web page with an image and a button, and add the following functionality:
+i)When the button is clicked, fade out the image over 2 seconds.
+ii)After the image has faded out, change the source of the image to a new image.
+iii)Fade in the new image over 2 seconds. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Fading</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="https://icon-library.com/images/50x50-icon/50x50-icon-0.jpg" id="img">
+        <input type="button" id="click" value="Click me"> 
+    </div>    
+    <script>
+        $("document").ready(function(){
+            $("#click").click(function(){
+                $("#img").fadeOut(2000,function(){
+                    $(this).attr("src","https://vignette.wikia.nocookie.net/mugen/images/1/14/YellowBirdArtwork.png/revision/latest?cb=20161107085415");
+                    $(this).fadeIn(2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
