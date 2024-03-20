@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<!--
+3.Language Selection
+Create an HTML form that asks the user to select their preferred language from a
+dropdown list. Create a servlet that will receive this information and store it in a cookie.
+The servlet should then redirect the user to a page that displays a greeting in their preferred
+language.
+-->
+<html>
+    <head>
+        <title>Language Selection</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@100..900&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <h1>Choose your preferred Language</h1>
+            <form action="languageservlet">
+                Enter Your name:<input type="text" name="name"><br><br>
+                <select name="langselect">
+                    <option value="tamil" class="tamil">தமிழ்</option>  
+                    <option value="english">English</option>
+                </select><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
