@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+1.Create a web application that displays a list of movies. Allow the user to search for
+movies by title or actor using servlet.
+-->
+<html>
+    <head>
+        <title>Movie Search</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <div class="movielist">
+                <h1>Movies Available:</h1>
+                <ul id="available">
+                </ul>
+            </div><br><br>
+            <form action="movieservlet">
+                <input type="text" name="input" placeholder="Search by movie name or actor name" style="width: 50%"><br><br>        
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        
+        <script>
+            var movies=[
+                {title:"Killers of the flower moon",actor:"Leonardo DiCaprio"},
+                {title:"Dune",actor:"Timothée Chalamet"}
+            ];
+            
+            (function(){
+                var list=document.getElementById("available");
+                movies.forEach(function(movie){
+                   var listitem=document.createElement("li") ;
+                   listitem.textContent=movie.title+" Starring "+movie.actor;
+                   list.appendChild(listitem);
+                });
+            })();
+            
+        </script>
+            
+    </body>
+</html>
