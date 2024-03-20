@@ -5,20 +5,19 @@
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-
 
 /**
  *
  * @author VISHWA
  */
-@WebServlet(urlPatterns = {"/languageservlet"})
-public class languageservlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/quizservlet"})
+public class quizservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,27 +32,32 @@ public class languageservlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            String q=request.getParameter("ques");
+            String a=request.getParameter("ans");
             
-            String l=request.getParameter("langselect");
-            String n=request.getParameter("name");
-            Cookie ck=new Cookie("lang",l);
-            response.addCookie(ck);
-            Cookie c[]=request.getCookies();
-            String select=c[0].getValue().toString();
+            HttpSession session=request.getSession();
+            session.setAttribute(q, a);
+            
+            response.setContentType("text/html");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Greeting Page</title>");            
+            out.println("<meta charset='UTF-8'>");
+            out.println("<title>Quiz</title>");
             out.println("</head>");
             out.println("<body>");
-            if(select.equals("english"))
+            out.println("<h2>Quiz</h2>");
+            out.println("<ul>");
+            
+            java.util.Enumeration<String> question=session.getAttributeNames();
+            while(question.hasMoreElements())
             {
-                out.println("<h1>Welcome "+n+"</h1>");
+                String ques=question.nextElement();
+                String ans=(String) session.getAttribute(ques);
+                out.println("<li><b>"+ques+":</b>"+ans+"</li>");                
             }
-            else
-            {
-                out.println("<h1>வணக்கம் "+n+"</h1>");
-            }            
+            
+            out.println("</ul>");
             out.println("</body>");
             out.println("</html>");
         }

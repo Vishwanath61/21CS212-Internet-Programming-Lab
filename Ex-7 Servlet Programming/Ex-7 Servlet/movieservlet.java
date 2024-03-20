@@ -3,22 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
-
 
 /**
  *
  * @author VISHWA
  */
-@WebServlet(urlPatterns = {"/languageservlet"})
-public class languageservlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/movieservlet"})
+public class movieservlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,25 +32,27 @@ public class languageservlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            String l=request.getParameter("langselect");
-            String n=request.getParameter("name");
-            Cookie ck=new Cookie("lang",l);
-            response.addCookie(ck);
-            Cookie c[]=request.getCookies();
-            String select=c[0].getValue().toString();
+            String a=request.getParameter("input");
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Greeting Page</title>");            
+            out.println("<title>Servlet movieservlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            if(select.equals("english"))
+            if(a.equals("Killers of the flower moon")||a.equals("Leonardo DiCaprio"))
             {
-                out.println("<h1>Welcome "+n+"</h1>");
+                out.println("<h1>Killers of the flower moon Starring Leonardo DiCaprio</h1><br><br>");  
+                out.println("<img src=\"https://a.ltrbxd.com/resized/film-poster/3/9/8/0/0/9/398009-killers-of-the-flower-moon-0-460-0-690-crop.jpg?k=13ea9a5cda\">");
+            }
+            else if(a.equals("Dune")||a.equals("Timothée Chalamet"))
+            {
+                out.println("<h1>Dune Starring Timothée Chalamet</h1>"); 
+                out.println("<img src=\"https://th.bing.com/th/id/OIP.N6vdSTKjIhNSvTH2P0rUXgAAAA?rs=1&pid=ImgDetMain\">");
             }
             else
             {
-                out.println("<h1>வணக்கம் "+n+"</h1>");
+                out.println("<h1>Result not found.</h1><br><br>");
             }            
             out.println("</body>");
             out.println("</html>");
