@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Create an XML document containing the details of 5 books and save it on the server.
+Write an Ajax program that displays all the books in a dropdown list on the webpage.
+When the user selects a book from the dropdown list, the program should display the 
+book's details below the dropdown list without refreshing the page
+-->
+<html>
+    <head>
+        <title>Book Information</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    </head>
+    <body>
+        <h1>Select a Book</h1><br>
+        <select id="bookselect">
+            <option value="1">A Song of Ice and Fire</option>
+            <option value="">Harry Potter</option>
+            <option value="3">Killers of the Flower Moon</option>
+            <option value="4">The Lord of the Rings</option>
+            <option value="5">Ponniyin Selvan</option>
+        </select><br><br>
+        <button onclick="fun()">Submit</button>
+        <div id="result"></div><br><br>      
+        <script>
+            function fun(){
+                let id=document.getElementById("bookselect").value;
+                let obj=new XMLHttpRequest();
+                let result="";                
+                obj.onreadystatechange=function(){
+                    if(obj.readyState==4 && obj.status==200)
+                    {
+                        console.log(obj.responseText);
+                        displayBook(obj.responseText);
+                    }
+                }
+                obj.open("GET","books.xml",true);
+                obj.send();
+            }
+            function displayBook(response){
+                let xmlDoc = new DOMParser().parseFromString(response, "text/xml");
+                let books = xmlDoc.getElementsByTagName("book");
+                let selectedBookId = document.getElementById("bookselect").value;
+                let bookDetails = "";
+                for(let i = 0; i < books.length; i++){
+                    let bookId = books[i].getElementsByTagName("bookid")[0].childNodes[0].nodeValue;
+                    if(bookId === selectedBookId){
+                        let title = books[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+                        let author = books[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+                        let genre = books[i].getElementsByTagName("genre")[0].childNodes[0].nodeValue;
+                        let publication = books[i].getElementsByTagName("publication")[0].childNodes[0].nodeValue;
+                        bookDetails = "<h2>Book Details</h2>" +
+                                      "<p><b>Title:</b> " + title + "</p>" +
+                                      "<p><b>Author:</b> " + author + "</p>" +
+                                      "<p><b>Genre:</b> " + genre + "</p>" +
+                                      "<p><b>Publication:</b> " + publication + "</p>";
+                        break;
+                    }
+                }
+                document.getElementById("result").innerHTML = bookDetails;
+            }
+        </script>
+    </body>
+</html>
