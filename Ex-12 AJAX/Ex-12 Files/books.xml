@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book>
+        <bookid>1</bookid>
+        <title>A Song of Ice and Fire</title>
+        <author>George R. R. Martin</author>
+        <genre>Fantasy</genre>
+        <publication> Harper Voyager</publication>
+    </book>
+    <book>
+        <bookid>2</bookid>
+        <title>Harry Potter</title>
+        <author>J. K. Rowling</author>
+        <genre>Fantasy</genre>
+        <publication>Bloomsbury</publication>
+    </book>
+    <book>
+        <bookid>3</bookid>
+        <title>Killers of the Flower Moon: The Osage Murders and the Birth of the FBI</title>
+        <author>David Grann</author>
+        <genre>Non-fiction</genre>
+        <publication>Doubleday</publication>
+    </book>
+    <book>
+        <bookid>4</bookid>
+        <title>The Lord of the Rings</title>
+        <author>J.R.R.Tolkien</author>
+        <genre>Fantasy</genre>
+        <publication>George Allen & Unwin</publication>
+    </book>
+    <book>
+        <bookid>5</bookid>
+        <title>Ponniyin Selvan</title>
+        <author>Kalki Krishnamurthy</author>
+        <genre>Historical fiction</genre>
+        <publication>Managala Noolagam</publication>
+    </book>
+</books>
