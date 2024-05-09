@@ -1,0 +1,37 @@
+<books>    
+    <book>
+        <title>Dune</title>
+        <author>Frank Herbert</author>
+        <year>1965</year>
+        <price>1000</price>
+        <available>yes</available>
+    </book>
+    <book>
+        <title>The Lord of the Rings: The Fellowship of the Ring</title>
+        <author>J.R.R. Tolkien</author>
+        <year>1954</year>
+        <price>1200</price>
+        <available>yes</available>
+    </book>
+    <book>
+        <title>1984</title>
+        <author>George Orwell</author>
+        <year>1949</year>
+        <price>900</price>
+        <available>no</available>
+    </book>
+    <book>
+        <title>Harry Potter and the Philosopher's Stone</title>
+        <author>J.K. Rowling</author>
+        <year>1997</year>
+        <price>1100</price>
+        <available>yes</available>
+    </book>
+    <book>
+        <title>The Hitchhiker's Guide to the Galaxy</title>
+        <author>Douglas Adams</author>
+        <year>1979</year>
+        <price>950</price>
+        <available>no</available>
+    </book>
+</books>
