@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <id>p11</id>
+        <name>Phone</name>
+        <price>20000</price>
+        <quantity>450</quantity>
+    </product>
+    <product>
+        <id>p12</id>
+        <name>Laptop</name>
+        <price>100000</price>
+        <quantity>550</quantity>
+    </product>
+    <product>
+        <id>p13</id>
+        <name>Smart Watch</name>
+        <price>2000</price>
+        <quantity>1050</quantity>
+    </product>
+    <product>
+        <id>p14</id>
+        <name>Airbuds</name>
+        <price>1000</price>
+        <quantity>950</quantity>
+    </product>
+</products>
