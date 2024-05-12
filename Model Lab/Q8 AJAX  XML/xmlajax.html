@@ -1,0 +1,58 @@
+<!--
+8.Create an XML document containing the details of 4 products and save it on the server.
+Write an Ajax program that takes a product code as input and returns the product's details by parsing the XML document.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">            
+                <h2>Product Information</h2><br>
+                Enter Product ID:<input type="text" placeholder="Enter Product Id to view the content" id="pid"><br><br>
+                <button onclick="fun()">Submit</button>           
+            <div id="result"></div>
+        </div>
+        <script>
+            function fun(){
+                let id=document.getElementById("pid").value;
+                alert(id);
+                let obj=new XMLHttpRequest();
+                let result="";                
+                obj.onreadystatechange=function(){
+                    if(obj.readyState==4 && obj.status==200)
+                    {
+                        console.log(obj.responseText);
+                        displayBook(obj.responseText);
+                    }
+                }
+                obj.open("GET","product.xml",true);
+                obj.send();
+            }
+            function displayBook(response){
+                let xmlDoc = new DOMParser().parseFromString(response, "text/xml");
+                let products = xmlDoc.getElementsByTagName("product");
+                let selectedId = document.getElementById("pid").value;
+                let result = "";                
+                for(let i = 0; i < products.length; i++){
+                    let bid = products[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
+                    if(bid === selectedId){
+                        let name = products[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                        let price = products[i].getElementsByTagName("price")[0].childNodes[0].nodeValue;
+                        let qty = products[i].getElementsByTagName("quantity")[0].childNodes[0].nodeValue;                        
+                        result = "<h2>Product Details</h2>" +
+                                      "<p><b>ID:</b> " + bid + "</p>" +
+                                      "<p><b>Name:</b> " + name + "</p>" +
+                                      "<p><b>Price:</b> " + price + "</p>"+
+                                      "<p><b>Quantity:</b> " + qty + "</p>";
+                        break;
+                    }
+                }                
+                document.getElementById("result").innerHTML = result;
+            }
+        </script>          
+    </body>
+</html>
