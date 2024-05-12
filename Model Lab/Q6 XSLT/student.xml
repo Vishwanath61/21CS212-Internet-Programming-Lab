@@ -1,0 +1,27 @@
+<!--
+6.Create an Extensible markup language to represent the students mark information of a class.
+Create a webpage to display all the students' consolidated mark statements with pass (green color) or fail (red color)using XSLT
+-->
+<students>
+    <student>
+        <rollno>111</rollno>
+        <name>aaa</name>
+        <sub1>67</sub1>
+        <sub2>77</sub2>
+        <sub3>87</sub3>
+    </student>    
+    <student>
+        <rollno>112</rollno>
+        <name>bbb</name>
+        <sub1>45</sub1>
+        <sub2>67</sub2>
+        <sub3>90</sub3>
+    </student>
+    <student>
+        <rollno>113</rollno>
+        <name>cc</name>
+        <sub1>20</sub1>
+        <sub2>83</sub2>
+        <sub3>90</sub3>
+    </student>
+</students>
