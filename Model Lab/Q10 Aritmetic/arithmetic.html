@@ -1,0 +1,54 @@
+<!--
+10. Create two textboxes and one button with + on it. 
+On click of the button you should display the sum of the two entered numbers in the textbox. 
+Similarly add Subtract, Multiple and Division buttons.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arithmetic Operations</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Arithmetic Operations</h2><br><br>
+            Number 1:<input type="text" id="num1" placeholder="Enter Number 1">  Number 2:<input type="text" id="num2" placeholder="Enter Number 2"><br><br><br>
+            <button onclick="add()">Add</button>
+            <button onclick="sub()">Subtract</button>
+            <button onclick="mul()">Multiplication</button>
+            <button onclick="div()">Division</button>
+        </div><br>
+        <div id="result"></div>
+        <script>
+            function add(){
+                let num1=parseFloat(document.getElementById("num1").value);
+                let num2=parseFloat(document.getElementById("num2").value);
+                let sum=num1+num2;
+                let result="The Sum of "+num1+" and "+num2+" is: "+sum;
+                document.getElementById("result").innerHTML=result;
+            }
+            function sub(){
+                let num1=parseFloat(document.getElementById("num1").value);
+                let num2=parseFloat(document.getElementById("num2").value);
+                let diff=num1-num2;
+                let result="The Difference of "+num1+" and "+num2+" is: "+diff;
+                document.getElementById("result").innerHTML=result;
+            }
+            function mul(){
+                let num1=parseFloat(document.getElementById("num1").value);
+                let num2=parseFloat(document.getElementById("num2").value);
+                let prod=num1*num2;
+                let result="The Product of "+num1+" and "+num2+" is: "+prod;
+                document.getElementById("result").innerHTML=result;
+            }
+            function div(){
+                let num1=parseFloat(document.getElementById("num1").value);
+                let num2=parseFloat(document.getElementById("num2").value);
+                let divd=num1/num2;
+                let result="The division of "+num1+" and "+num2+" is: "+divd;
+                document.getElementById("result").innerHTML=result;
+            }
+        </script>
+    </body>
+</html>
