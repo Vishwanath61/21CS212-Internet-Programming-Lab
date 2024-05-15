@@ -1,0 +1,21 @@
+<!--Transform an XML document containing a list of movies into an HTML table with 
+columns for title, director, and rating. If the rating is above a certain amount, display it in 
+yellow-->
+
+<movies>
+    <movie>
+        <title>aaa</title>
+        <director>xxx</director>
+        <rating>9</rating>
+    </movie>
+    <movie>
+        <title>bbb</title>
+        <director>yyy</director>
+        <rating>7</rating>
+    </movie>
+    <movie>
+        <title>ccc</title>
+        <director>zzz</director>
+        <rating>8</rating>
+    </movie>
+</movies>

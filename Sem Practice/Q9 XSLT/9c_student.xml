@@ -1,0 +1,21 @@
+<!--Transform an XML document containing a list of students into an HTML table with 
+columns for name, grade, and GPA. If the student's GPA is below a certain amount, 
+display it in red.-->
+
+<students>
+    <student>
+        <name>aaa</name>
+        <grade>A</grade>
+        <gpa>8.00</gpa>
+    </student>
+    <student>
+        <name>bbb</name>
+        <grade>C</grade>
+        <gpa>5.00</gpa>
+    </student>
+    <student>
+        <name>ccc</name>
+        <grade>B</grade>
+        <gpa>7.00</gpa>
+    </student>
+</students>

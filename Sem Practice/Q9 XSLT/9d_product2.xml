@@ -1,0 +1,19 @@
+<!--Transform an XML document containing a list of products into an HTML table with 
+columns for product name, price, and discounted price (if applicable). If the product is 
+on sale, display the discounted price in green-->
+
+<products>
+    <product>
+        <name>Smart Watch</name>
+        <price>2000</price>
+    </product>
+    <product>
+        <name>Neckband</name>
+        <price>1800</price>
+        <discounted-price>1500</discounted-price>
+    </product>
+    <product>
+        <name>Airpods</name>
+        <price>1000</price>
+    </product>
+</products>
