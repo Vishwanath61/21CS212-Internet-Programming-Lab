@@ -1,0 +1,22 @@
+<!--9) XML with XSLT
+• Transform an XML document containing a list of products into an HTML table with 
+columns for product name, price, and availability. If the product is not available, display 
+a message saying so.-->
+
+<products>
+    <product>        
+        <name>Phone</name>
+        <price>12000</price>
+        <availability>yes</availability>
+    </product>
+    <product>        
+        <name>Laptop</name>
+        <price>50000</price>
+        <availability>No</availability>
+    </product>
+    <product>        
+        <name>TV</name>
+        <price>75000</price>
+        <availability>Yes</availability>
+    </product>
+</products>
