@@ -1,0 +1,26 @@
+<!--
+Write a JavaScript program to remove all of the numbers from 
+'A1B2C3D4E5F6G7H8I9J10'
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Remove Numbers</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <button onclick="fun()">Click</button>
+        </div>
+        <div id="result"></div>
+        <script>
+            function fun()
+            {
+                let strnum="A1B2C3D4E5F6G7H8I9J10";
+                let str=strnum.replace(/[0-9]/g,"");
+                alert(str);
+            }
+        </script>
+    </body>
+</html>

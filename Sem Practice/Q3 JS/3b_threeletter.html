@@ -1,0 +1,29 @@
+<!--
+Write a java script function that accepts a sentence as input and then it should list out 
+all 3 letter words in it.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Three letter words</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <button onclick="fun()">Click</button>
+        </div>
+        <div id="result"></div>
+        <script>
+            function fun()
+            {
+                let inp=prompt("Enter a sentence: ");
+                if(inp===null || inp==="")
+                    alert("Enter a valid input");
+                let words=inp.split(" ");
+                let threeletter=words.filter(word=>word.length===3);
+                document.getElementById("result").innerHTML=threeletter.join(", ");
+            }
+        </script>
+    </body>
+</html>

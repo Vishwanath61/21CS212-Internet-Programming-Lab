@@ -1,1 +1,46 @@
-
+<!--
+Write a java script program to find out duplicate elements in an array.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Duplicate JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <h3>Enter the Array</h3><br>
+            <input type="text" id="inp" placeholder="eg:1,2,3,4">
+            <button onclick="fun()">Click</button>            
+        </div>
+        <div id="result"></div>
+        <script>
+            function fun()
+            {
+                let result=document.getElementById("result");
+                let inp=document.getElementById("inp").value;
+                let arr=inp.split(',').map(Number);
+                let count={};
+                let duplicate=[];
+                for (let i = 0; i < arr.length; i++) {
+                    let ele = arr[i];
+                    if (count[ele]) {
+                        count[ele]++;
+                    } else {
+                        count[ele] = 1;
+                    }
+                }
+                for(let i=0;i<10;i++)
+                {
+                    if(count[i]>1)
+                        duplicate.push(i);
+                }
+                if(duplicate.length>0)
+                    result.innerHTML=duplicate.join(",");
+                else
+                    result.innerHTML="Null";
+            }
+        </script>
+    </body>
+</html>
