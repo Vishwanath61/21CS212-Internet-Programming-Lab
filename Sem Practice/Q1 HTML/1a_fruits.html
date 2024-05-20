@@ -1,0 +1,22 @@
+<!--
+Create clickable areas for three fruits in the picture. When you click the fruit, features 
+about the fruits have to be displayed in another web page.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image map</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <img src="images/imagemap1.jpeg" alt="fruits" usemap="#fruit">
+            <map name="fruit">
+                <area shape="circle" coords="280,313,50" href="https://en.wikipedia.org/wiki/Orange_(fruit)" target="_blank">
+                <area shape="rect" coords="411,20,543,306" href="https://en.wikipedia.org/wiki/Strawberry">
+                <area shape="poly" coords="15,4,116,29,164,121,107,181,21,228,7,279,2,131,6,23,0,0" href="https://en.wikipedia.org/wiki/Grape">
+            </map>
+        </div>
+    </body>
+</html>
