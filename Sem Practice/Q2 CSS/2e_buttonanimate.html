@@ -1,0 +1,33 @@
+<!--
+Create a button with animation.
+• Set the initial background color of the button to orange.
+• Change the background color to darkorange on hover.
+• Add a transition of 0.4s for the background color.
+• Set the font size to 18px.
+• Add padding of 10px 20px to the button.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button Animation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .but{
+                background-color: orange;
+                color: white;
+                padding: 10px 20px;
+                font-size: 18px;
+                transition: background-color 0.4s;
+            }
+            .but:hover{
+                background-color: darkorange;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button class="but">Hover Me</button>
+        </div>
+    </body>
+</html>

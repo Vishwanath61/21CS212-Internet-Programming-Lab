@@ -1,0 +1,32 @@
+<!--
+Apply hover effects to a button.
+• Set the initial background color to green.
+• Change the background color to darkgreen on hover.
+• Set the initial text color to white.
+• Change the text color to yellow on hover.
+• Add a transition effect of 0.3s for the background color. 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Button Hover</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .but{
+                background-color: green;
+                color: white;
+                transition: background-color 0.3s;
+            }
+            .but:hover{
+                background-color: darkgreen;
+                color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button class="but">Hover me</button>
+        </div>
+    </body>
+</html>

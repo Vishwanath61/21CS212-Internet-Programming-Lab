@@ -1,0 +1,33 @@
+    <!--
+     Apply a custom font and shadow to a header.
+    • Import a custom font using @font-face or Google Fonts.
+    • Apply the custom font to a header.
+    • Set the font size to 24px.
+    • Add a text shadow of 1px 1px 2px black.
+    • Change the header’s color to purple
+    -->
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Custom Font</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+                @font-face{
+                    font-family: roboto;
+                    src: url("Roboto-Black.ttf")format("truetype");
+                }                
+                .head{
+                    font-family: roboto;
+                    font-size: 24px;
+                    text-shadow: 1px 1px 2px black;
+                    color: purple;
+                }
+            </style>            
+        </head>
+        <body>
+            <div>
+                <h4 class="head">Sample header</h4>
+            </div>
+        </body>
+    </html>
