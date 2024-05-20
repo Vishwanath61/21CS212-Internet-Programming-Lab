@@ -1,1 +1,25 @@
-
+<!--
+Develop a client program (HTML form or Java program) to take input values and 
+send them to the servlet. Display the calculated gross salary.Write a servlet to 
+calculate the gross salary of an employee based on inputs like name, employee 
+ID, basic pay, and HRA
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <form action="employee_4a">
+                Name:<input type="text" placeholder="Enter your Name" name="name" required=""><br><br>
+                Employee id:<input type="text" placeholder="Enter your ID" name="id" required=""><br><br>
+                Basic Pay:<input type="number" placeholder="Enter your Basic Pay" name="pay" required=""><br><br>                
+                HRA:<input type="number" placeholder="Enter your HRA" name="hra" required=""><br><br>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </body>
+</html>
