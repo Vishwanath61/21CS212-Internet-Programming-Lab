@@ -1,0 +1,73 @@
+<!--
+Develop a web page that allows the user to enter all the details of the 
+passenger(name, age, emailid , gender).Write a client side scripting code to 
+validate the emailid ,age and gender, where email id should consists of the 
+special symbol @and period(.),where age between 1 to 100 and gender is male 
+or female
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Details</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            span{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            Name:<input type="text" id="name"><br><span id="nameerr"></span><br><br>
+            Age:<input type="number" id="age"><br><span id="ageerr"></span><br><br>
+            Email:<input type="email" id="mail"><br><span id="mailerr"></span><br><br>
+            Gender:<input type="radio" id="male" name="gender" value="Male">Male
+                    <input type="radio" id="female" name="gender" value="Female">Female<br><span id="genderr"></span><br><br>
+            <button onclick="fun()">Submit</button>
+        </div>
+        <div id="result"></div>
+        <script>
+            function fun()
+            {
+                let mailerr="";
+                let genderr="";
+                let ageerr="";                
+                document.getElementById("nameerr").innerHTML = "";
+                document.getElementById("mailerr").innerHTML = "";
+                document.getElementById("ageerr").innerHTML = "";
+                document.getElementById("genderr").innerHTML = "";
+                let name=document.getElementById("name").value;
+                let age=document.getElementById("age").value;
+                let mail=document.getElementById("mail").value;
+                let male=document.getElementById("male").checked;
+                let female=document.getElementById("female").checked;
+                let email=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._]+\.[a-zA-Z]{2,}$/;
+                if(mail.trim()==="")
+                {
+                    mailerr="*Mail cannot be empty";
+                    document.getElementById("mailerr").innerHTML=mailerr;
+                }                    
+                else if(!email.test(mail))
+                {
+                    mailerr="*Invalid Mail";
+                    document.getElementById("mailerr").innerHTML=mailerr;
+                }                    
+                if(age<1 || age>100)
+                {
+                    ageerr="*Invalid Age";
+                    document.getElementById("ageerr").innerHTML=ageerr;
+                }                    
+                if(!male&&!female)
+                {
+                    genderr="*Select a radio box";
+                    document.getElementById("genderr").innerHTML=genderr;
+                }
+                if(mailerr.trim()==="" && ageerr.trim()==="" && genderr.trim()==="")
+                {
+                    document.getElementById("result").innerHTML="Success";
+                }
+            }
+        </script>
+    </body>
+</html>
