@@ -1,0 +1,26 @@
+<!--8)AJAX and XML
+•Create an XML file containing a list of products, each with details like name, category,
+price, and image URL. Use AJAX to fetch and display the products, 
+and allow users to filter the products by category.-->
+
+<products>
+    <product>
+        <name>Phone X</name>
+        <category>Electronics</category>
+        <price>1200</price>
+        <imageURL>phone_x.jpg</imageURL>
+    </product>
+    <product>
+        <name>Laptop Pro</name>
+        <category>Electronics</category>
+        <price>2000</price>
+        <imageURL>laptop_pro.jpg</imageURL>
+    </product>
+    <product>
+        <name>T-shirt</name>
+        <category>Clothing</category>
+        <price>25</price>
+        <imageURL>t_shirt.jpg</imageURL>
+    </product>
+    <!-- Add more products with different categories -->
+</products>

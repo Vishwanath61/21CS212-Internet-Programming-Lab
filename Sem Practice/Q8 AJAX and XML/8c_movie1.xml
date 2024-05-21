@@ -1,0 +1,23 @@
+<!--Build a movie database search application that retrieves movie information from an XML file using AJAX. 
+Allow users to search for movies by title, genre, or release year.-->
+
+<movies>
+    <movie>
+        <title>aaa</title>
+        <director>xxx</director>
+        <genre>Adventure</genre>
+        <release-year>2000</release-year>
+    </movie>
+    <movie>
+        <title>bbb</title>
+        <director>yyy</director>
+        <genre>Fantasy</genre>
+        <release-year>2010</release-year>
+    </movie>
+    <movie>
+        <title>ccc</title>
+        <director>zzz</director>
+        <genre>Sports</genre>
+        <release-year>2020</release-year>
+    </movie>
+</movies>

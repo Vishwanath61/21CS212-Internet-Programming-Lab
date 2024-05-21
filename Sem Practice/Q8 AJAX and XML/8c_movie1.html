@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Movie AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Search By Movie title, genre, release year</h2><br>
+            <input type="text" id="inp" placeholder="Search.."><br><br>
+            <button onclick="fun()">Submit</button>      
+        </div>
+        <div id="result"></div>
+        <script>
+            function fun(){
+                var obj=new XMLHttpRequest();
+                var inp=document.getElementById("inp").value;
+                console.log(inp);                
+                obj.onreadystatechange=function(){
+                    if(obj.readyState==4 && obj.status==200){
+                        console.log(obj.responseXML);
+                        display(obj.responseXML);
+                    }
+                }
+                obj.open("GET","8c_movie1.xml",true);
+                obj.send();
+            }
+            function display(xml){
+                var inp=document.getElementById("inp").value;
+                var res="";                
+                var xmldoc=xml.getElementsByTagName("movie");
+                for(var i=0;i<xmldoc.length;i++){
+                    var ans="";
+                    var title=xmldoc[i].getElementsByTagName("title")[0].textContent;
+                    var dir=xmldoc[i].getElementsByTagName("director")[0].textContent;
+                    var gen=xmldoc[i].getElementsByTagName("genre")[0].textContent;
+                    var rls=xmldoc[i].getElementsByTagName("release-year")[0].textContent;
+                    if(inp===title || inp===gen || inp===rls){
+                        ans="<p><b>Title: </b>"+title+"</p>"+
+                                "<p><b>Director: </b>"+dir+"</p>"+
+                                "<p><b>Genre: </b>"+gen+"</p>"+
+                                "<p><b>release-year: </b>"+rls+"</p>";
+                    }
+                    res=res+ans;
+                }
+                document.getElementById("result").innerHTML=res;
+            }
+        </script>
+    </body>
+</html>
