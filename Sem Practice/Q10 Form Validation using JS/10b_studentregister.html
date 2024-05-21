@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Registration</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            span{
+                color: red;
+            }
+        </style>            
+    </head>
+    <body>
+        <div>
+            Fullname: <input type="text" id="name"><br><span id="nameerr"></span><br><br>
+            Age: <input type="number" id="age"><br><span id="ageerr"></span><br><br>
+            Email: <input type="email" id="mail"><br><span id="mailerr"></span><br><br>
+            Student Id: <input type="text" id="id"><br><span id="iderr"></span><br><br>
+            Major: <select id="major">
+                <option value="">Select a major</option>
+                <option value="maths">Math</option>
+                <option value="science">Science</option>
+            </select><br><span id="majerr"></span><br><br>
+            <button onclick="fun()">Submit</button>
+        </div>
+        <div id="result"></div>
+        <script>
+            function fun() {
+                let valid = true;
+                document.getElementById("nameerr").innerHTML = "";
+                document.getElementById("ageerr").innerHTML = "";
+                document.getElementById("mailerr").innerHTML = "";
+                document.getElementById("iderr").innerHTML = "";
+                document.getElementById("majerr").innerHTML = "";
+                document.getElementById("result").innerHTML = "";
+
+                let name = document.getElementById("name").value;
+                let age = document.getElementById("age").value;
+                let mail = document.getElementById("mail").value;
+                let id = document.getElementById("id").value;
+                let maj = document.getElementById("major").value;
+
+                let nam = /^[a-zA-Z\s]+$/;
+                if (name.trim() === "") {
+                    document.getElementById("nameerr").innerHTML = "*Name cannot be empty.";
+                    valid = false;
+                } else if (!nam.test(name)) {
+                    document.getElementById("nameerr").innerHTML = "*Invalid Name.";
+                    valid = false;
+                }
+
+                let email = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (mail.trim() === "") {
+                    document.getElementById("mailerr").innerHTML = "*Mail cannot be empty.";
+                    valid = false;
+                } else if (!email.test(mail)) {
+                    document.getElementById("mailerr").innerHTML = "*Invalid Mail.";
+                    valid = false;
+                }
+
+                let sid = /^[a-zA-Z0-9]+$/;
+                if (id.trim() === "") {
+                    document.getElementById("iderr").innerHTML = "*ID cannot be empty.";
+                    valid = false;
+                } else if (!sid.test(id)) {
+                    document.getElementById("iderr").innerHTML = "*Invalid ID.";
+                    valid = false;
+                }
+
+                if (maj === "") {
+                    document.getElementById("majerr").innerHTML = "*Invalid Selection.";
+                    valid = false;
+                }
+
+                if (age < 18 || age > 60) {
+                    document.getElementById("ageerr").innerHTML = "*Invalid Age.";
+                    valid = false;
+                }
+
+                if (valid) {
+                    document.getElementById("result").innerHTML = "Success";
+                }
+            }
+        </script>
+    </body>
+</html>
